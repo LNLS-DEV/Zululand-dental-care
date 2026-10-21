@@ -1,4 +1,7 @@
-import { Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
+import { captureSource } from './lib/source.js'
+import Book from './pages/Book.jsx'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
 import WhatsAppButton from './components/WhatsAppButton.jsx'
@@ -16,6 +19,11 @@ import Terms from './pages/Terms.jsx'
 import NotFound from './pages/NotFound.jsx'
 
 export default function App() {
+  const { search } = useLocation()
+  useEffect(() => {
+    captureSource(search)
+  }, [search])
+
   return (
     <div className="flex min-h-screen flex-col">
       <ScrollToTop />
@@ -27,6 +35,7 @@ export default function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/reviews" element={<Reviews />} />
+          <Route path="/book" element={<Book />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />

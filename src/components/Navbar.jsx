@@ -57,7 +57,7 @@ export default function Navbar() {
 
         <div className="hidden md:block">
           <Link
-            to="/contact"
+            to="/book"
             className="inline-flex items-center gap-2 rounded-full bg-duma-900 px-5 py-2.5 text-[14px] font-medium text-white shadow-glass-sm transition-transform hover:-translate-y-0.5 hover:bg-ink"
           >
             <IconCalendar className="h-4 w-4" />
@@ -113,7 +113,7 @@ export default function Navbar() {
             </NavLink>
           ))}
           <Link
-            to="/contact"
+            to="/book"
             onClick={() => setOpen(false)}
             className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-duma-900 px-5 py-3 text-[15px] font-medium text-white"
           >

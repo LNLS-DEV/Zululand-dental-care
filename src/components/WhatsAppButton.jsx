@@ -1,9 +1,10 @@
 import { whatsappLink } from '../data/site.js'
+import { getSource } from '../lib/source.js'
 
 export default function WhatsAppButton() {
   return (
     <a
-      href={whatsappLink("Hi, I'd like to enquire about an appointment at Zululand Dental Care.")}
+      href={whatsappLink(`Hi, I'd like to enquire about an appointment at Zululand Dental Care.\n\n(Source: ${getSource()})`)}
       target="_blank"
       rel="noreferrer"
       aria-label="Message us on WhatsApp"
