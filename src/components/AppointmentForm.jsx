@@ -34,6 +34,12 @@ export default function AppointmentForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (!validate()) return
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: 'appointment_form_submit',
+      form_name: 'appointment_request',
+      handoff: 'whatsapp',
+    })
     const url = whatsappLink(buildMessage())
     setLink(url)
     window.open(url, '_blank', 'noopener,noreferrer')
